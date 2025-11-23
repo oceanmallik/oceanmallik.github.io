@@ -53,7 +53,6 @@
     </nav>
 
     <!-- Main About Content -->
-    <!-- Note: Padding-top is large to clear the fixed navbar -->
     <section class="section" style="padding-top: 120px; min-height: 100vh;">
         <div class="container">
             
@@ -65,11 +64,11 @@
                 </p>
             </div>
 
-            <!-- Two Column Layout -->
-            <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+            <!-- Two Column Layout (Classes added for alignment) -->
+            <div class="about-grid">
                 
                 <!-- Left Column: Educational Qualification -->
-                <div style="flex: 1; min-width: 300px; max-width: 600px;">
+                <div class="about-text-col">
                     <h2 class="section-title" style="text-align: left; font-size: 1.8rem; margin-bottom: 25px;">
                         <i class="fas fa-graduation-cap highlight"></i> My Educational Qualification
                     </h2>
@@ -82,7 +81,7 @@
                         </div>
                     </div>
 
-                    <!-- Education Item 2 -->
+                    <!-- Education Item 2 (Photo will align here on desktop) -->
                     <div class="edu-card">
                         <div class="edu-content">
                             <h3>Mazid Jarina Foundation School and College</h3>
@@ -99,8 +98,8 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Image -->
-                <div style="flex: 1; min-width: 300px; max-width: 400px; display: flex; align-items: flex-start; justify-content: center; padding-top: 20px;">
+                <!-- Right Column: Image (Pushed down by CSS on desktop) -->
+                <div class="about-image-col">
                    <div class="image-frame" style="width: 250px; height: 250px;">
                         <img src="me.jpg" alt="Ocean Mallik">
                    </div>
