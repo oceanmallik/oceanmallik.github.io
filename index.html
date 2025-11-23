@@ -16,17 +16,18 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Ocean <span class="highlight">Mallik</span></a>
+            <a href="index.html" class="logo">Ocean <span class="highlight">Mallik</span></a>
             
             <div class="nav-right">
                 <!-- Desktop Menu -->
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#activities">My Activities</a></li>
                     <li><a href="#achievements">My Achievements</a></li>
                     <li><a href="#support">Support Me</a></li>
                     <li><a href="#blog">My Blog</a></li>
-                    <li><a href="#about">About Me</a></li>
+                    <!-- UPDATED LINK BELOW -->
+                    <li><a href="about.html">About Me</a></li>
                 </ul>
 
                 <!-- Theme Toggle Button -->
@@ -43,12 +44,13 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="mobile-menu hidden">
-            <a href="#home">Home</a>
+            <a href="index.html">Home</a>
             <a href="#activities">My Activities</a>
             <a href="#achievements">My Achievements</a>
             <a href="#support">Support Me</a>
             <a href="#blog">My Blog</a>
-            <a href="#about">About Me</a>
+            <!-- UPDATED LINK BELOW -->
+            <a href="about.html">About Me</a>
         </div>
     </nav>
 
@@ -63,14 +65,14 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#activities" class="btn btn-primary">My Activities</a>
-                    <a href="#about" class="btn btn-outline">About Me</a>
+                    <!-- UPDATED BUTTON BELOW -->
+                    <a href="about.html" class="btn btn-outline">About Me</a>
                 </div>
             </div>
             
             <div class="hero-image">
                 <div class="blob"></div>
                 <div class="image-frame">
-                    <!-- Updated Image Tag -->
                     <img src="me.jpg" alt="Ocean Mallik">
                 </div>
             </div>
@@ -192,28 +194,8 @@
         </div>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="section bg-secondary">
-        <div class="container about-container">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
-            <div class="card about-card">
-                <p>
-                    I am Ocean Mallik. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source, or gaming.
-                </p>
-                
-                <h3>Tech Stack</h3>
-                <div class="tags">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>Python</span>
-                    <span>Git</span>
-                    <span>React</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- About Me Section REMOVED (Moved to about.html) -->
+    
     <!-- Footer -->
     <footer>
         <p>Built with curiosity and too much caffeine.<br>&copy; 2025 Ocean</p>
@@ -240,35 +222,20 @@
         const themeIcon = themeBtn.querySelector('i');
         const body = document.body;
 
-        // Define Themes and Icons
-        // 0: Default (Blue/Emerald), 1: Black, 2: White
         const themes = ['', 'theme-black', 'theme-white'];
         const icons = ['fa-adjust', 'fa-moon', 'fa-sun'];
 
-        // Load saved theme or default to 0
         let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
 
-        // Function to Apply Theme
         function applyTheme(index) {
-            // Remove all possible theme classes
             body.classList.remove('theme-black', 'theme-white');
-            
-            // Add the new class (if not default/empty)
-            if (themes[index]) {
-                body.classList.add(themes[index]);
-            }
-
-            // Update Icon
+            if (themes[index]) body.classList.add(themes[index]);
             themeIcon.className = `fas ${icons[index]}`;
-
-            // Save to Storage
             localStorage.setItem('themeIndex', index);
         }
 
-        // Apply theme on load
         applyTheme(currentThemeIndex);
 
-        // Click Event: Cycle through themes
         themeBtn.addEventListener('click', () => {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
             applyTheme(currentThemeIndex);
