@@ -531,3 +531,45 @@ footer {
         font-size: 2.5rem;
     }
 }
+
+/* --- 12. Education Cards (New Styles) --- */
+.edu-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px; /* Slightly smaller radius for a tighter look */
+    margin-bottom: 15px; /* Reduced spacing between cards */
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.edu-card:hover {
+    transform: translateX(5px); /* Subtle shift right on hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Light theme specific hover for better contrast */
+body.light-theme .edu-card:hover {
+    background-color: #f0fdf4; /* Very light green tint */
+}
+
+body.theme-black .edu-card:hover {
+    background-color: #1a1a1a; /* Slightly lighter black */
+}
+
+.edu-content {
+    padding: 1.25rem; /* Reduced padding for a more compact look */
+}
+
+.edu-content h3 {
+    color: var(--text-title);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.edu-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
