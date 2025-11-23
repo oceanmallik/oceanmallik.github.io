@@ -727,3 +727,17 @@ body.theme-black .edu-card:hover {
     display: block;
     margin: 10px 0;
 }
+
+/* --- 15. QR Codes --- */
+.qr-img {
+    width: 180px;      /* Fixed size for consistency */
+    height: 180px;
+    object-fit: contain;
+    margin: 15px auto; /* Centers the image */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: white; /* Ensures QR is readable even in dark mode */
+    padding: 10px;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
