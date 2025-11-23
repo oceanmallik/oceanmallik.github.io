@@ -1,531 +1,277 @@
-/* --- 1. Fonts & Variables --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
-:root {
-    /* === THEME 1: DEFAULT (Ocean Dark) === */
-    --primary-color: #10b981;       /* Emerald Green */
-    --primary-hover: #34d399;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Mallik - Portfolio</title>
     
-    --bg-main: #0f172a;             /* Dark Blue-Grey */
-    --bg-secondary: #020617;        /* Almost Black */
-    --bg-card: #1e293b;
-    --nav-bg: rgba(15, 23, 42, 0.9);
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
     
-    --text-main: #d1d5db;           /* Light Grey */
-    --text-title: #ffffff;          /* White */
-    --text-muted: #9ca3af;
-    
-    --border-color: #1f2937;
-    
-    /* Spacing & Layout */
-    --container-width: 1200px;
-    --border-radius: 12px;
-    --transition: all 0.3s ease;
-}
-
-/* === THEME 2: PITCH BLACK === */
-body.theme-black {
-    --primary-color: #10b981;
-    --primary-hover: #34d399;
-    
-    --bg-main: #000000;
-    --bg-secondary: #0a0a0a;
-    --bg-card: #121212;
-    --nav-bg: rgba(0, 0, 0, 0.85);
-    
-    --text-main: #e5e5e5;
-    --text-title: #ffffff;
-    --text-muted: #a3a3a3;
-    
-    --border-color: #262626;
-}
-
-/* === THEME 3: CLEAN WHITE === */
-body.theme-white {
-    --primary-color: #059669;       /* Darker green for contrast on white */
-    --primary-hover: #10b981;
-    
-    --bg-main: #ffffff;
-    --bg-secondary: #f3f4f6;        /* Light Grey */
-    --bg-card: #f9fafb;             /* Very Light Grey */
-    --nav-bg: rgba(255, 255, 255, 0.9);
-    
-    --text-main: #4b5563;           /* Dark Grey */
-    --text-title: #111827;          /* Black */
-    --text-muted: #6b7280;
-    
-    --border-color: #e5e7eb;
-}
-
-/* --- 2. Global Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
-}
-
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* Utility Classes */
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.highlight {
-    color: var(--primary-color);
-}
-
-.bg-secondary {
-    background-color: var(--bg-secondary);
-}
-
-.hidden {
-    display: none !important;
-}
-
-/* --- 3. Buttons --- */
-.btn {
-    display: inline-block;
-    padding: 12px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-3px);
-}
-
-.btn-outline {
-    border: 1px solid var(--text-muted);
-    color: var(--text-title);
-    background: transparent;
-}
-
-.btn-outline:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-}
-
-/* Theme Toggle Button Specifics */
-.theme-toggle-btn {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-title);
-    font-size: 1.1rem;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-left: 20px; /* Spacing from links */
-    transition: var(--transition);
-}
-
-.theme-toggle-btn:hover {
-    background-color: var(--bg-secondary);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    transform: rotate(15deg);
-}
-
-/* --- 4. Navigation --- */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--nav-bg); 
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    z-index: 1000;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.nav-container {
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-title);
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-    align-items: center; /* Ensure links align with button */
-}
-
-.nav-links a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-main);
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.menu-btn {
-    display: none; /* Hidden on Desktop */
-    background: none;
-    border: none;
-    color: var(--text-title);
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-left: 15px;
-}
-
-/* Mobile Menu */
-.mobile-menu {
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem;
-}
-
-.mobile-menu a {
-    display: block;
-    padding: 10px;
-    color: var(--text-main);
-    font-weight: 500;
-}
-
-.mobile-menu a:hover {
-    color: var(--primary-color);
-    background-color: rgba(128, 128, 128, 0.05);
-    border-radius: 6px;
-}
-
-/* --- 5. Hero Section --- */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 70px;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.hero-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.subtitle {
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-}
-
-.title {
-    font-size: 3.5rem;
-    color: var(--text-title);
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-}
-
-.description {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-    max-width: 500px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-/* Hero Image & Animation */
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    min-width: 300px;
-    margin-top: 2rem;
-}
-
-.image-frame {
-    width: 300px;
-    height: 300px;
-    background-color: var(--bg-card);
-    border-radius: 50%;
-    border: 4px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.placeholder-icon {
-    font-size: 100px;
-    color: var(--text-muted);
-}
-
-.blob {
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    background-color: rgba(16, 185, 129, 0.2);
-    border-radius: 50%;
-    filter: blur(40px);
-    z-index: 1;
-    animation: pulse 4s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.95); opacity: 0.5; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-    100% { transform: scale(0.95); opacity: 0.5; }
-}
-
-/* --- 6. Sections General --- */
-.section {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.25rem;
-    color: var(--text-title);
-    margin-bottom: 3rem;
-}
-
-/* --- 7. About Section --- */
-.about-container {
-    max-width: 800px;
-}
-
-.card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.about-card h3 {
-    color: var(--text-title);
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tags span {
-    background-color: rgba(16, 185, 129, 0.1);
-    color: var(--primary-color);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-/* --- 8. Projects/Activities Grid --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    padding: 0;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
-}
-
-.card-image {
-    height: 200px;
-    background-color: var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-image i {
-    font-size: 3rem;
-    color: var(--text-muted);
-}
-
-.project-card:hover .card-image i {
-    color: var(--primary-color);
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-.card-content h3 {
-    color: var(--text-title);
-    margin-bottom: 0.5rem;
-}
-
-.tech-badges {
-    margin: 1rem 0;
-    display: flex;
-    gap: 10px;
-}
-
-.tech-badges small {
-    background-color: rgba(128, 128, 128, 0.1);
-    color: var(--primary-color);
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.card-links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
-
-.card-links a:hover {
-    color: var(--primary-color);
-}
-
-/* --- 9. Contact/Support Section --- */
-.contact-container {
-    text-align: center;
-    max-width: 700px;
-}
-
-.contact-text {
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-    color: var(--text-muted);
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 3rem;
-}
-
-.social-links a {
-    width: 50px;
-    height: 50px;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: var(--text-title);
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border-color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-/* --- 10. Footer --- */
-footer {
-    background-color: var(--bg-main);
-    padding: 2rem;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    margin-top: auto;
-}
-
-/* --- 11. Responsive Design (Mobile) --- */
-@media (max-width: 900px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .menu-btn {
-        display: block;
-    }
-
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text {
-        margin-bottom: 3rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .title {
-        font-size: 2.5rem;
-    }
-}
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Ocean <span class="highlight">Mallik</span></a>
+            
+            <div class="nav-right">
+                <!-- Desktop Menu -->
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#activities">My Activities</a></li>
+                    <li><a href="#achievements">My Achievements</a></li>
+                    <li><a href="#support">Support Me</a></li>
+                    <li><a href="#blog">My Blog</a></li>
+                    <li><a href="#about">About Me</a></li>
+                </ul>
+
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" title="Switch Theme">
+                    <i class="fas fa-adjust"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#home">Home</a>
+            <a href="#activities">My Activities</a>
+            <a href="#achievements">My Achievements</a>
+            <a href="#support">Support Me</a>
+            <a href="#blog">My Blog</a>
+            <a href="#about">About Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <p class="subtitle">Welcome, I am</p>
+                <h1 class="title">Ocean <span class="highlight">Mallik</span></h1>
+                <p class="description">
+                    A curious developer building the future one line of code at a time. Exploring the depths of technology.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#activities" class="btn btn-primary">My Activities</a>
+                    <a href="#about" class="btn btn-outline">About Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="blob"></div>
+                <div class="image-frame">
+                    <i class="fas fa-user-astronaut placeholder-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="section bg-secondary">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Activities</span></h2>
+            
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Coding Project One</h3>
+                        <p>Building meaningful solutions. This project focuses on accessibility and performance.</p>
+                        <div class="tech-badges">
+                            <small>React</small>
+                            <small>Node.js</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Open Source Contribution</h3>
+                        <p>Contributed to major open source libraries to help the developer community.</p>
+                        <div class="tech-badges">
+                            <small>GitHub</small>
+                            <small>Community</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>UI/UX Exploration</h3>
+                        <p>Designing interfaces that delight users. A collection of my design case studies.</p>
+                        <div class="tech-badges">
+                            <small>Figma</small>
+                            <small>Design</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fas fa-image"></i> Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Achievements</span></h2>
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-trophy highlight"></i> Hackathon Winner 2024</h3>
+                        <p>Secured 1st place in the Regional Code Fest for innovative use of AI.</p>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-certificate highlight"></i> Full Stack Certification</h3>
+                        <p>Certified developer with distinction in modern web technologies.</p>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-star highlight"></i> 500+ Commits</h3>
+                        <p>Consistent contribution streak on GitHub for the past year.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section bg-secondary">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">My <span class="highlight">Blog</span></h2>
+            <p>Coming Soon! I'll be sharing my thoughts on tech and life here.</p>
+        </div>
+    </section>
+
+    <!-- Support Me Section -->
+    <section id="support" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title">Support <span class="highlight">Me</span></h2>
+            <p class="contact-text">
+                If you like my work, consider supporting me or just saying hello!
+            </p>
+            
+            <div class="social-links">
+                <a href="#" title="Buy me a coffee"><i class="fas fa-coffee"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <a href="mailto:email@example.com" class="btn btn-outline">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section bg-secondary">
+        <div class="container about-container">
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="card about-card">
+                <p>
+                    I am Ocean Mallik. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source, or gaming.
+                </p>
+                
+                <h3>Tech Stack</h3>
+                <div class="tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Git</span>
+                    <span>React</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with curiosity and too much caffeine.<br>&copy; 2025 Ocean</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 1. Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 2. Three-Way Theme Toggle Logic
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeBtn.querySelector('i');
+        const body = document.body;
+
+        // Define Themes and Icons
+        // 0: Default (Blue/Emerald), 1: Black, 2: White
+        const themes = ['', 'theme-black', 'theme-white'];
+        const icons = ['fa-adjust', 'fa-moon', 'fa-sun'];
+
+        // Load saved theme or default to 0
+        let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
+
+        // Function to Apply Theme
+        function applyTheme(index) {
+            // Remove all possible theme classes
+            body.classList.remove('theme-black', 'theme-white');
+            
+            // Add the new class (if not default/empty)
+            if (themes[index]) {
+                body.classList.add(themes[index]);
+            }
+
+            // Update Icon
+            themeIcon.className = `fas ${icons[index]}`;
+
+            // Save to Storage
+            localStorage.setItem('themeIndex', index);
+        }
+
+        // Apply theme on load
+        applyTheme(currentThemeIndex);
+
+        // Click Event: Cycle through themes
+        themeBtn.addEventListener('click', () => {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            applyTheme(currentThemeIndex);
+        });
+    </script>
+</body>
+</html>
