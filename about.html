@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Ocean Mallik</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ocean <span class="highlight">Mallik</span></a>
+            
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#activities">My Activities</a></li>
+                    <li><a href="index.html#achievements">My Achievements</a></li>
+                    <li><a href="index.html#support">Support Me</a></li>
+                    <li><a href="index.html#blog">My Blog</a></li>
+                    <li><a href="about.html" class="highlight">About Me</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="theme-toggle-btn" title="Switch Theme">
+                    <i class="fas fa-adjust"></i>
+                </button>
+
+                <button id="mobile-menu-btn" class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="index.html">Home</a>
+            <a href="index.html#activities">My Activities</a>
+            <a href="index.html#achievements">My Achievements</a>
+            <a href="index.html#support">Support Me</a>
+            <a href="index.html#blog">My Blog</a>
+            <a href="about.html">About Me</a>
+        </div>
+    </nav>
+
+    <!-- Main About Content -->
+    <section class="section" style="padding-top: 120px; min-height: 100vh;">
+        <div class="container">
+            
+            <!-- Intro Text -->
+            <div style="margin-bottom: 50px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h1 class="title">About <span class="highlight">Me</span></h1>
+                <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.8;">
+                    Hello visitor, I’m Ocean, a curious human who loves using computers, exploring new ideas, and tinkering with anything that sparks my interest.
+                </p>
+            </div>
+
+            <!-- Two Column Layout (Education on Left) -->
+            <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+                
+                <!-- Left Column: Educational Qualification -->
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="text-align: left; font-size: 1.8rem; margin-bottom: 20px;">
+                        <i class="fas fa-graduation-cap highlight"></i> My Educational Qualification
+                    </h2>
+
+                    <!-- Education Item 1 -->
+                    <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--primary-color);">
+                        <div class="card-content">
+                            <h3 style="margin-bottom: 5px;">Daffodil International University</h3>
+                            <p style="color: var(--text-muted);">BSc in Software Engineering</p>
+                        </div>
+                    </div>
+
+                    <!-- Education Item 2 -->
+                    <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--primary-color);">
+                        <div class="card-content">
+                            <h3 style="margin-bottom: 5px;">Mazid Jarina Foundation School and College</h3>
+                            <p style="color: var(--text-muted);">HSC in Science <span class="highlight">(GPA 5.00)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Education Item 3 -->
+                    <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--primary-color);">
+                        <div class="card-content">
+                            <h3 style="margin-bottom: 5px;">Bhedarganj Headquarter Pilot Govt. High School & College</h3>
+                            <p style="color: var(--text-muted);">SSC in Science <span class="highlight">(GPA 5.00)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image or Additional Info (Optional filler for now) -->
+                <div style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center;">
+                   <!-- We can put your photo here again or an illustration -->
+                   <div class="image-frame" style="width: 250px; height: 250px;">
+                        <img src="me.jpg" alt="Ocean Mallik">
+                   </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with curiosity and too much caffeine.<br>&copy; 2025 Ocean</p>
+    </footer>
+
+    <!-- Scripts (Required for Theme Toggle & Menu) -->
+    <script>
+        // 1. Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+
+        // 2. Three-Way Theme Toggle Logic
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeBtn.querySelector('i');
+        const body = document.body;
+
+        const themes = ['', 'theme-black', 'theme-white'];
+        const icons = ['fa-adjust', 'fa-moon', 'fa-sun'];
+
+        let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
+
+        function applyTheme(index) {
+            body.classList.remove('theme-black', 'theme-white');
+            if (themes[index]) body.classList.add(themes[index]);
+            themeIcon.className = `fas ${icons[index]}`;
+            localStorage.setItem('themeIndex', index);
+        }
+
+        applyTheme(currentThemeIndex);
+
+        themeBtn.addEventListener('click', () => {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            applyTheme(currentThemeIndex);
+        });
+    </script>
+</body>
+</html>
