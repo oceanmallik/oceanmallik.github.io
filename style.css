@@ -785,12 +785,15 @@ body.theme-black .edu-card:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* --- 16. About Page Alignment --- */
+/* --- 16. About Page Alignment (FIXED) --- */
 .about-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
+    
+    /* This forces the image to float in the VERTICAL center */
+    align-items: center; 
 }
 
 .about-text-col {
@@ -804,16 +807,15 @@ body.theme-black .edu-card:hover {
     min-width: 300px;
     max-width: 400px;
     display: flex;
-    align-items: flex-start;
+    
+    /* Ensures the image is centered inside its own box */
+    align-items: center; 
     justify-content: center;
-    /* Default spacing for mobile */
-    padding-top: 40px; 
 }
 
-/* Desktop Only: Push image down to align with 2nd Card */
-@media (min-width: 992px) {
+/* On Mobile, add a little space so it doesn't touch the text above it */
+@media (max-width: 991px) {
     .about-image-col {
-        /* Title (~60px) + 1st Card (~100px) = ~160px offset */
-        padding-top: 160px; 
+        padding-top: 40px;
     }
 }
