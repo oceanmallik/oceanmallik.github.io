@@ -310,13 +310,15 @@ img {
     justify-content: center;
     position: relative;
     z-index: 2;
-    overflow: hidden;
+    overflow: hidden; /* Clips the square image to the circle */
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.placeholder-icon {
-    font-size: 100px;
-    color: var(--text-muted);
+/* IMPORTANT: This ensures the 800x800 image fits perfectly */
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zooms in to cover the circle, no distortion */
 }
 
 .blob {
