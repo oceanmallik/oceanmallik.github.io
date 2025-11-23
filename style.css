@@ -784,3 +784,36 @@ body.theme-black .edu-card:hover {
     display: block;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
+
+/* --- 16. About Page Alignment --- */
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.about-text-col {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.about-image-col {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* Default spacing for mobile */
+    padding-top: 40px; 
+}
+
+/* Desktop Only: Push image down to align with 2nd Card */
+@media (min-width: 992px) {
+    .about-image-col {
+        /* Title (~60px) + 1st Card (~100px) = ~160px offset */
+        padding-top: 160px; 
+    }
+}
