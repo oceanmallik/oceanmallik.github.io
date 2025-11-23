@@ -630,3 +630,100 @@ body.theme-black .edu-card:hover {
     margin-top: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
+/* --- 14. Support Page Styles --- */
+.support-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.support-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.support-title {
+    color: var(--text-title);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.support-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 180px;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+}
+
+.support-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Specific Button Colors */
+.btn-social {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.btn-social:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-patreon {
+    background-color: #FF424D; /* Patreon Brand Color */
+}
+.btn-patreon:hover {
+    background-color: #E63B45;
+}
+
+.btn-bkash {
+    background-color: #E2136E; /* bKash Brand Color */
+}
+.btn-bkash:hover {
+    background-color: #C00E5C;
+}
+
+.payment-box {
+    background: var(--bg-main);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-top: 20px;
+    width: 100%;
+}
+.payment-number {
+    font-family: monospace;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
