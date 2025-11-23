@@ -1,1 +1,199 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Dev<span class="highlight">Portfolio</span></a>
+            
+            <!-- Desktop Menu -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <p class="subtitle">Hello, I am</p>
+                <h1 class="title">Your <span class="highlight">Name</span></h1>
+                <p class="description">
+                    A passionate Developer building accessible, pixel-perfect, and performant web experiences.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="blob"></div>
+                <div class="image-frame">
+                    <i class="fas fa-user placeholder-icon"></i>
+                    <!-- <img src="your-photo.jpg" alt="Profile"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-darker">
+        <div class="container about-container">
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="card about-card">
+                <p>
+                    I am a junior software developer based in [Your City]. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source, or gaming.
+                </p>
+                
+                <h3>Tech Stack</h3>
+                <div class="tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Git</span>
+                    <span>React</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Project Name One</h3>
+                        <p>A brief description of the project goes here. Explain what it does and the problem it solves.</p>
+                        <div class="tech-badges">
+                            <small>React</small>
+                            <small>Node.js</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mobile App Two</h3>
+                        <p>Description of your second project. Keep it concise and impactful.</p>
+                        <div class="tech-badges">
+                            <small>Flutter</small>
+                            <small>Firebase</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Backend API Three</h3>
+                        <p>A robust API built for data processing. Mention performance metrics if you have them.</p>
+                        <div class="tech-badges">
+                            <small>Python</small>
+                            <small>SQL</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-darker">
+        <div class="container contact-container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <p class="contact-text">
+                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:email@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <a href="mailto:email@example.com" class="btn btn-outline">Say Hello</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Name. Built with HTML & CSS.</p>
+    </footer>
+
+    <!-- JavaScript for Menu -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
