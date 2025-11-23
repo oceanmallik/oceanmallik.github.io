@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Ocean Mallik</title>
+    <title>Ocean Mallik - Portfolio</title>
     
     <!-- FAVICON (Added) -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -22,33 +22,37 @@
             <a href="index.html" class="logo">Ocean <span class="highlight">Mallik</span></a>
             
             <div class="nav-right">
+                <!-- Desktop Menu -->
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#activities">My Activities</a></li>
+                    <li><a href="#activities">My Activities</a></li>
                     
                     <!-- UPDATED LINK -->
                     <li><a href="achievements/">My Achievements</a></li>
                     
-                    <!-- UPDATED LINK: Changed from index.html#support to support/ -->
+                    <!-- UPDATED LINK: Changed from #support to support/ -->
                     <li><a href="support/">Support Me</a></li>
                     
                     <li><a href="https://blog.oceanmallik.com/" target="_blank">My Blog</a></li>
-                    <li><a href="about.html" class="highlight">About Me</a></li>
+                    <li><a href="about.html">About Me</a></li>
                 </ul>
 
+                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle-btn" title="Switch Theme">
                     <i class="fas fa-adjust"></i>
                 </button>
 
+                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
 
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="mobile-menu hidden">
             <a href="index.html">Home</a>
-            <a href="index.html#activities">My Activities</a>
+            <a href="#activities">My Activities</a>
             
             <!-- UPDATED LINK -->
             <a href="achievements/">My Achievements</a>
@@ -61,62 +65,144 @@
         </div>
     </nav>
 
-    <!-- Main About Content -->
-    <section class="section" style="padding-top: 120px; min-height: 100vh;">
-        <div class="container">
-            
-            <!-- Intro Text -->
-            <div style="margin-bottom: 50px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h1 class="title">About <span class="highlight">Me</span></h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.8;">
-                    Hello visitor, I’m Ocean, a curious human who loves using computers, exploring new ideas, and tinkering with anything that sparks my interest.
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <p class="subtitle">Welcome, I am</p>
+                <h1 class="title">Ocean <span class="highlight">Mallik</span></h1>
+                <p class="description">
+                    A curious developer building the future one line of code at a time. Exploring the depths of technology.
                 </p>
+                <div class="hero-buttons">
+                    <!-- REPLACED BUTTON BELOW -->
+                    <a href="achievements/" class="btn btn-primary">My Achievements</a>
+                    <a href="about.html" class="btn btn-outline">About Me</a>
+                </div>
             </div>
+            
+            <div class="hero-image">
+                <div class="blob"></div>
+                <div class="image-frame">
+                    <img src="me.jpg" alt="Ocean Mallik">
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Two Column Layout (Education on Left) -->
-            <div style="display: flex; flex-wrap: wrap; gap: 40px;">
-                
-                <!-- Left Column: Educational Qualification -->
-                <div style="flex: 1; min-width: 300px;">
-                    <h2 class="section-title" style="text-align: left; font-size: 1.8rem; margin-bottom: 25px;">
-                        <i class="fas fa-graduation-cap highlight"></i> My Educational Qualification
-                    </h2>
-
-                    <!-- Education Item 1 -->
-                    <div class="edu-card">
-                        <div class="edu-content">
-                            <h3>Daffodil International University</h3>
-                            <p>BSc in Software Engineering</p>
-                        </div>
+    <!-- Activities Section -->
+    <section id="activities" class="section bg-secondary">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Activities</span></h2>
+            
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-
-                    <!-- Education Item 2 -->
-                    <div class="edu-card">
-                        <div class="edu-content">
-                            <h3>Mazid Jarina Foundation School and College</h3>
-                            <p>HSC in Science <span class="highlight">(GPA 5.00)</span></p>
+                    <div class="card-content">
+                        <h3>Coding Project One</h3>
+                        <p>Building meaningful solutions. This project focuses on accessibility and performance.</p>
+                        <div class="tech-badges">
+                            <small>React</small>
+                            <small>Node.js</small>
                         </div>
-                    </div>
-
-                    <!-- Education Item 3 -->
-                    <div class="edu-card">
-                        <div class="edu-content">
-                            <h3>Bhedarganj Headquarter Pilot Govt. High School & College</h3>
-                            <p>SSC in Science <span class="highlight">(GPA 5.00)</span></p>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Image or Additional Info (Optional filler for now) -->
-                <div style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center;">
-                   <!-- We can put your photo here again or an illustration -->
-                   <div class="image-frame" style="width: 250px; height: 250px;">
-                        <img src="me.jpg" alt="Ocean Mallik">
-                   </div>
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Open Source Contribution</h3>
+                        <p>Contributed to major open source libraries to help the developer community.</p>
+                        <div class="tech-badges">
+                            <small>GitHub</small>
+                            <small>Community</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> View</a>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>UI/UX Exploration</h3>
+                        <p>Designing interfaces that delight users. A collection of my design case studies.</p>
+                        <div class="tech-badges">
+                            <small>Figma</small>
+                            <small>Design</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fas fa-image"></i> Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Achievements</span></h2>
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-trophy highlight"></i> Hackathon Winner 2024</h3>
+                        <p>Secured 1st place in the Regional Code Fest for innovative use of AI.</p>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-certificate highlight"></i> Full Stack Certification</h3>
+                        <p>Certified developer with distinction in modern web technologies.</p>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-star highlight"></i> 500+ Commits</h3>
+                        <p>Consistent contribution streak on GitHub for the past year.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section (Placeholder text removed/hidden since you have a real blog now, but keeping section for structure if you want to add a feed later) -->
+    <section id="blog" class="section bg-secondary hidden"> 
+        <!-- I added 'hidden' class here to hide this section since the link now goes to an external site -->
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">My <span class="highlight">Blog</span></h2>
+            <p>Coming Soon! I'll be sharing my thoughts on tech and life here.</p>
+        </div>
+    </section>
+
+    <!-- Support Me Section -->
+    <section id="support" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title">Support <span class="highlight">Me</span></h2>
+            <p class="contact-text">
+                If you like my work, consider supporting me or just saying hello!
+            </p>
+            
+            <div class="social-links">
+                <a href="#" title="Buy me a coffee"><i class="fas fa-coffee"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
 
+            <a href="mailto:email@example.com" class="btn btn-outline">Contact Me</a>
         </div>
     </section>
 
@@ -125,17 +211,21 @@
         <p>Built with curiosity and too much caffeine.<br>&copy; 2025 Ocean</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script>
         // 1. Mobile Menu Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
-        if(btn && menu) {
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
             });
-        }
+        });
 
         // 2. Three-Way Theme Toggle Logic
         const themeBtn = document.getElementById('theme-toggle');
