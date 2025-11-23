@@ -2,38 +2,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Default Dark Theme Variables */
+    /* === THEME 1: DEFAULT (Ocean Dark) === */
     --primary-color: #10b981;       /* Emerald Green */
     --primary-hover: #34d399;
     
-    /* Backgrounds */
     --bg-main: #0f172a;             /* Dark Blue-Grey */
     --bg-secondary: #020617;        /* Almost Black */
     --bg-card: #1e293b;
     --nav-bg: rgba(15, 23, 42, 0.9);
     
-    /* Text */
     --text-main: #d1d5db;           /* Light Grey */
     --text-title: #ffffff;          /* White */
     --text-muted: #9ca3af;
     
-    /* Borders */
     --border-color: #1f2937;
     
     /* Spacing & Layout */
-    --container-width: 1200px; /* Increased slightly for more nav items */
+    --container-width: 1200px;
     --border-radius: 12px;
     --transition: all 0.3s ease;
 }
 
-/* Light Theme Variables (Applied when body has .light-theme class) */
-body.light-theme {
-    --primary-color: #059669;       /* Darker Emerald for contrast on light */
+/* === THEME 2: PITCH BLACK === */
+body.theme-black {
+    --primary-color: #10b981;
+    --primary-hover: #34d399;
+    
+    --bg-main: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-card: #121212;
+    --nav-bg: rgba(0, 0, 0, 0.85);
+    
+    --text-main: #e5e5e5;
+    --text-title: #ffffff;
+    --text-muted: #a3a3a3;
+    
+    --border-color: #262626;
+}
+
+/* === THEME 3: CLEAN WHITE === */
+body.theme-white {
+    --primary-color: #059669;       /* Darker green for contrast on white */
     --primary-hover: #10b981;
     
-    --bg-main: #f3f4f6;             /* Light Grey */
-    --bg-secondary: #ffffff;        /* White */
-    --bg-card: #ffffff;
+    --bg-main: #ffffff;
+    --bg-secondary: #f3f4f6;        /* Light Grey */
+    --bg-card: #f9fafb;             /* Very Light Grey */
     --nav-bg: rgba(255, 255, 255, 0.9);
     
     --text-main: #4b5563;           /* Dark Grey */
@@ -109,7 +123,7 @@ img {
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: #ffffff; /* Always white text on primary button */
+    color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -128,21 +142,28 @@ img {
     color: var(--primary-color);
 }
 
+/* Theme Toggle Button Specifics */
 .theme-toggle-btn {
     background: transparent;
-    border: none;
+    border: 1px solid var(--border-color);
     color: var(--text-title);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    padding: 8px;
-    margin-left: 15px;
-    transition: var(--transition);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    margin-left: 20px; /* Spacing from links */
+    transition: var(--transition);
 }
 
 .theme-toggle-btn:hover {
-    background-color: rgba(128, 128, 128, 0.1);
+    background-color: var(--bg-secondary);
     color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: rotate(15deg);
 }
 
 /* --- 4. Navigation --- */
@@ -178,6 +199,7 @@ img {
 .nav-links {
     display: flex;
     gap: 20px;
+    align-items: center; /* Ensure links align with button */
 }
 
 .nav-links a {
@@ -225,7 +247,7 @@ img {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 70px; /* Space for fixed navbar */
+    padding-top: 70px;
 }
 
 .hero-container {
@@ -297,7 +319,6 @@ img {
     color: var(--text-muted);
 }
 
-/* Animated Blob */
 .blob {
     position: absolute;
     width: 320px;
@@ -370,7 +391,7 @@ img {
 }
 
 .project-card {
-    padding: 0; /* Remove padding for image */
+    padding: 0;
     overflow: hidden;
     transition: var(--transition);
 }
@@ -484,11 +505,11 @@ footer {
 /* --- 11. Responsive Design (Mobile) --- */
 @media (max-width: 900px) {
     .nav-links {
-        display: none; /* Hide desktop menu links */
+        display: none;
     }
     
     .menu-btn {
-        display: block; /* Show mobile menu icon */
+        display: block;
     }
 
     .hero-container {
