@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Ocean Mallik</title>
+    
+    <!-- Go UP one level (../) to find favicon -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Go UP one level (../) to find style.css -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <!-- Go UP one level for Home links -->
+            <a href="../index.html" class="logo">Ocean <span class="highlight">Mallik</span></a>
+            
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#activities">My Activities</a></li>
+                    <!-- Active Link -->
+                    <li><a href="#" class="highlight">My Achievements</a></li>
+                    <li><a href="../index.html#support">Support Me</a></li>
+                    <li><a href="https://blog.oceanmallik.com/" target="_blank">My Blog</a></li>
+                    <li><a href="../about.html">About Me</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="theme-toggle-btn" title="Switch Theme">
+                    <i class="fas fa-adjust"></i>
+                </button>
+
+                <button id="mobile-menu-btn" class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#activities">My Activities</a>
+            <a href="#">My Achievements</a>
+            <a href="../index.html#support">Support Me</a>
+            <a href="https://blog.oceanmallik.com/" target="_blank">My Blog</a>
+            <a href="../about.html">About Me</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="padding-top: 120px; min-height: 100vh;">
+        <div class="container">
+            <h1 class="section-title">My <span class="highlight">Certificates</span></h1>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                
+                <!-- CERTIFICATE 1 -->
+                <button class="accordion-btn">
+                    <span>Full Stack Web Development (Udemy)</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <p>Completed the full bootcamp covering HTML, CSS, JS, Node, and React.</p>
+                        <!-- Put your image inside the 'achievements' folder -->
+                        <img src="cert1.jpg" alt="Certificate 1" class="cert-img">
+                    </div>
+                </div>
+
+                <!-- CERTIFICATE 2 -->
+                <button class="accordion-btn">
+                    <span>Hackathon Winner 2024</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <p>First prize winner at the Regional Tech Fest.</p>
+                        <img src="cert2.jpg" alt="Certificate 2" class="cert-img">
+                    </div>
+                </div>
+
+                <!-- CERTIFICATE 3 -->
+                <button class="accordion-btn">
+                    <span>Python for Data Science</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <p>Specialization in data analysis and visualization.</p>
+                        <img src="cert3.jpg" alt="Certificate 3" class="cert-img">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with curiosity and too much caffeine.<br>&copy; 2025 Ocean</p>
+    </footer>
+
+    <script>
+        // --- Accordion Logic ---
+        var acc = document.getElementsByClassName("accordion-btn");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+
+        // --- Standard Menu/Theme Logic (Copied for consistency) ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if(btn && menu) {
+            btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        }
+
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeBtn.querySelector('i');
+        const body = document.body;
+        const themes = ['', 'theme-black', 'theme-white'];
+        const icons = ['fa-adjust', 'fa-moon', 'fa-sun'];
+        let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
+
+        function applyTheme(index) {
+            body.classList.remove('theme-black', 'theme-white');
+            if (themes[index]) body.classList.add(themes[index]);
+            themeIcon.className = `fas ${icons[index]}`;
+            localStorage.setItem('themeIndex', index);
+        }
+        applyTheme(currentThemeIndex);
+        themeBtn.addEventListener('click', () => {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            applyTheme(currentThemeIndex);
+        });
+    </script>
+</body>
+</html>
