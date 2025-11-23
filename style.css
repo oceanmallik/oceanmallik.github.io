@@ -791,7 +791,7 @@ body.theme-black .edu-card:hover {
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
-    /* Aligns items to the top initially, so we can push the image down manually */
+    /* Aligns items to the top initially */
     align-items: flex-start; 
 }
 
@@ -809,11 +809,11 @@ body.theme-black .edu-card:hover {
     justify-content: center;
 }
 
-/* DESKTOP ONLY: Push image down to align with the 2nd Card */
+/* DESKTOP ONLY: Align with 2nd Card */
 @media (min-width: 992px) {
     .about-image-col {
-        /* Title + 1st Card height = approx 140px. This aligns it with the 2nd card. */
-        margin-top: 140px; 
+        /* Reduced from 140px to 85px to pull it up */
+        margin-top: 85px; 
     }
 }
 
