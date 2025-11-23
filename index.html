@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Ocean Mallik - Portfolio</title>
     
     <!-- Link to your CSS file -->
     <link rel="stylesheet" href="style.css">
@@ -17,63 +16,192 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Dev<span class="highlight">Portfolio</span></a>
+            <a href="#" class="logo">Ocean <span class="highlight">Mallik</span></a>
             
-            <!-- Desktop Menu -->
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <!-- Desktop Menu -->
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#activities">My Activities</a></li>
+                    <li><a href="#achievements">My Achievements</a></li>
+                    <li><a href="#support">Support Me</a></li>
+                    <li><a href="#blog">My Blog</a></li>
+                    <li><a href="#about">About Me</a></li>
+                </ul>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="mobile-menu hidden">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#activities">My Activities</a>
+            <a href="#achievements">My Achievements</a>
+            <a href="#support">Support Me</a>
+            <a href="#blog">My Blog</a>
+            <a href="#about">About Me</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Home) -->
     <section id="home" class="hero">
         <div class="container hero-container">
             <div class="hero-text">
-                <p class="subtitle">Hello, I am</p>
-                <h1 class="title">Your <span class="highlight">Name</span></h1>
+                <p class="subtitle">Welcome, I am</p>
+                <h1 class="title">Ocean <span class="highlight">Mallik</span></h1>
                 <p class="description">
-                    A passionate Developer building accessible, pixel-perfect, and performant web experiences.
+                    A curious developer building the future one line of code at a time. Exploring the depths of technology.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    <a href="#activities" class="btn btn-primary">My Activities</a>
+                    <a href="#about" class="btn btn-outline">About Me</a>
                 </div>
             </div>
             
             <div class="hero-image">
                 <div class="blob"></div>
                 <div class="image-frame">
-                    <i class="fas fa-user placeholder-icon"></i>
+                    <i class="fas fa-user-astronaut placeholder-icon"></i>
                     <!-- <img src="your-photo.jpg" alt="Profile"> -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section bg-darker">
+    <!-- Activities Section (Formerly Projects) -->
+    <section id="activities" class="section bg-secondary">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Activities</span></h2>
+            
+            <div class="projects-grid">
+                <!-- Activity 1 -->
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Coding Project One</h3>
+                        <p>Building meaningful solutions. This project focuses on accessibility and performance.</p>
+                        <div class="tech-badges">
+                            <small>React</small>
+                            <small>Node.js</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Open Source Contribution</h3>
+                        <p>Contributed to major open source libraries to help the developer community.</p>
+                        <div class="tech-badges">
+                            <small>GitHub</small>
+                            <small>Community</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fab fa-github"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="card project-card">
+                    <div class="card-image">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>UI/UX Exploration</h3>
+                        <p>Designing interfaces that delight users. A collection of my design case studies.</p>
+                        <div class="tech-badges">
+                            <small>Figma</small>
+                            <small>Design</small>
+                        </div>
+                        <div class="card-links">
+                            <a href="#"><i class="fas fa-image"></i> Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section (Placeholder) -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Achievements</span></h2>
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-trophy highlight"></i> Hackathon Winner 2024</h3>
+                        <p>Secured 1st place in the Regional Code Fest for innovative use of AI.</p>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-certificate highlight"></i> Full Stack Certification</h3>
+                        <p>Certified developer with distinction in modern web technologies.</p>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-star highlight"></i> 500+ Commits</h3>
+                        <p>Consistent contribution streak on GitHub for the past year.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section (Placeholder) -->
+    <section id="blog" class="section bg-secondary">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">My <span class="highlight">Blog</span></h2>
+            <p>Coming Soon! I'll be sharing my thoughts on tech and life here.</p>
+        </div>
+    </section>
+
+    <!-- Support Me Section (Contact/Links) -->
+    <section id="support" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title">Support <span class="highlight">Me</span></h2>
+            <p class="contact-text">
+                If you like my work, consider supporting me or just saying hello!
+            </p>
+            
+            <div class="social-links">
+                <a href="#" title="Buy me a coffee"><i class="fas fa-coffee"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <a href="mailto:email@example.com" class="btn btn-outline">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section bg-secondary">
         <div class="container about-container">
             <h2 class="section-title">About <span class="highlight">Me</span></h2>
             <div class="card about-card">
                 <p>
-                    I am a junior software developer based in [Your City]. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source, or gaming.
+                    I am Ocean Mallik. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source, or gaming.
                 </p>
                 
                 <h3>Tech Stack</h3>
@@ -89,98 +217,14 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="card project-card">
-                    <div class="card-image">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Project Name One</h3>
-                        <p>A brief description of the project goes here. Explain what it does and the problem it solves.</p>
-                        <div class="tech-badges">
-                            <small>React</small>
-                            <small>Node.js</small>
-                        </div>
-                        <div class="card-links">
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="card project-card">
-                    <div class="card-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Mobile App Two</h3>
-                        <p>Description of your second project. Keep it concise and impactful.</p>
-                        <div class="tech-badges">
-                            <small>Flutter</small>
-                            <small>Firebase</small>
-                        </div>
-                        <div class="card-links">
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="card project-card">
-                    <div class="card-image">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Backend API Three</h3>
-                        <p>A robust API built for data processing. Mention performance metrics if you have them.</p>
-                        <div class="tech-badges">
-                            <small>Python</small>
-                            <small>SQL</small>
-                        </div>
-                        <div class="card-links">
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-darker">
-        <div class="container contact-container">
-            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
-            <p class="contact-text">
-                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-            </p>
-            
-            <div class="social-links">
-                <a href="mailto:email@example.com"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-
-            <a href="mailto:email@example.com" class="btn btn-outline">Say Hello</a>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Your Name. Built with HTML & CSS.</p>
+        <p>Built with curiosity and too much caffeine.<br>&copy; 2025 Ocean</p>
     </footer>
 
-    <!-- JavaScript for Menu -->
+    <!-- JavaScript -->
     <script>
+        // Mobile Menu Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -188,11 +232,38 @@
             menu.classList.toggle('hidden');
         });
 
-        // Close menu when clicking a link
         document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
+        });
+
+        // Theme Toggle Logic
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeBtn.querySelector('i');
+        const body = document.body;
+
+        // Check for saved theme in localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'light') {
+            body.classList.add('light-theme');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            
+            // Toggle Icon
+            if (body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
         });
     </script>
 </body>
