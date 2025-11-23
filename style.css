@@ -2,19 +2,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Color Palette - Change these to customize! */
+    /* Default Dark Theme Variables */
     --primary-color: #10b981;       /* Emerald Green */
     --primary-hover: #34d399;
-    --bg-dark: #0f172a;             /* Dark Blue-Grey */
-    --bg-darker: #020617;           /* Almost Black */
-    --card-bg: #1e293b;
+    
+    /* Backgrounds */
+    --bg-main: #0f172a;             /* Dark Blue-Grey */
+    --bg-secondary: #020617;        /* Almost Black */
+    --bg-card: #1e293b;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+    
+    /* Text */
     --text-main: #d1d5db;           /* Light Grey */
-    --text-white: #ffffff;
+    --text-title: #ffffff;          /* White */
+    --text-muted: #9ca3af;
+    
+    /* Borders */
+    --border-color: #1f2937;
     
     /* Spacing & Layout */
-    --container-width: 1100px;
+    --container-width: 1200px; /* Increased slightly for more nav items */
     --border-radius: 12px;
     --transition: all 0.3s ease;
+}
+
+/* Light Theme Variables (Applied when body has .light-theme class) */
+body.light-theme {
+    --primary-color: #059669;       /* Darker Emerald for contrast on light */
+    --primary-hover: #10b981;
+    
+    --bg-main: #f3f4f6;             /* Light Grey */
+    --bg-secondary: #ffffff;        /* White */
+    --bg-card: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    
+    --text-main: #4b5563;           /* Dark Grey */
+    --text-title: #111827;          /* Black */
+    --text-muted: #6b7280;
+    
+    --border-color: #e5e7eb;
 }
 
 /* --- 2. Global Reset --- */
@@ -30,9 +56,10 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-main);
     color: var(--text-main);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -61,8 +88,8 @@ img {
     color: var(--primary-color);
 }
 
-.bg-darker {
-    background-color: var(--bg-darker);
+.bg-secondary {
+    background-color: var(--bg-secondary);
 }
 
 .hidden {
@@ -77,11 +104,12 @@ img {
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
+    border: none;
 }
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: var(--bg-darker);
+    color: #ffffff; /* Always white text on primary button */
 }
 
 .btn-primary:hover {
@@ -90,12 +118,30 @@ img {
 }
 
 .btn-outline {
-    border: 1px solid #4b5563;
-    color: var(--text-white);
+    border: 1px solid var(--text-muted);
+    color: var(--text-title);
+    background: transparent;
 }
 
 .btn-outline:hover {
     border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-title);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 15px;
+    transition: var(--transition);
+    border-radius: 50%;
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(128, 128, 128, 0.1);
     color: var(--primary-color);
 }
 
@@ -104,10 +150,11 @@ img {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.9); /* Transparent dark */
+    background-color: var(--nav-bg); 
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #1f2937;
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-container {
@@ -120,12 +167,23 @@ img {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: var(--text-title);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
 }
 
 .nav-links a:hover {
@@ -136,15 +194,16 @@ img {
     display: none; /* Hidden on Desktop */
     background: none;
     border: none;
-    color: var(--text-white);
+    color: var(--text-title);
     font-size: 1.5rem;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 /* Mobile Menu */
 .mobile-menu {
-    background-color: var(--bg-darker);
-    border-bottom: 1px solid #1f2937;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem;
 }
 
@@ -157,7 +216,7 @@ img {
 
 .mobile-menu a:hover {
     color: var(--primary-color);
-    background-color: rgba(255,255,255,0.05);
+    background-color: rgba(128, 128, 128, 0.05);
     border-radius: 6px;
 }
 
@@ -191,14 +250,14 @@ img {
 
 .title {
     font-size: 3.5rem;
-    color: var(--text-white);
+    color: var(--text-title);
     margin-bottom: 1.5rem;
     line-height: 1.1;
 }
 
 .description {
     font-size: 1.1rem;
-    color: #9ca3af;
+    color: var(--text-muted);
     margin-bottom: 2rem;
     max-width: 500px;
 }
@@ -221,20 +280,21 @@ img {
 .image-frame {
     width: 300px;
     height: 300px;
-    background-color: #1f2937;
+    background-color: var(--bg-card);
     border-radius: 50%;
-    border: 4px solid #374151;
+    border: 4px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 2;
     overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .placeholder-icon {
     font-size: 100px;
-    color: #4b5563;
+    color: var(--text-muted);
 }
 
 /* Animated Blob */
@@ -263,7 +323,7 @@ img {
 .section-title {
     text-align: center;
     font-size: 2.25rem;
-    color: var(--text-white);
+    color: var(--text-title);
     margin-bottom: 3rem;
 }
 
@@ -273,15 +333,16 @@ img {
 }
 
 .card {
-    background-color: var(--card-bg);
-    border: 1px solid #374151;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .about-card h3 {
-    color: var(--text-white);
+    color: var(--text-title);
     margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -301,7 +362,7 @@ img {
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
-/* --- 8. Projects Grid --- */
+/* --- 8. Projects/Activities Grid --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -316,12 +377,12 @@ img {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
 }
 
 .card-image {
     height: 200px;
-    background-color: #374151;
+    background-color: var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -329,7 +390,7 @@ img {
 
 .card-image i {
     font-size: 3rem;
-    color: #6b7280;
+    color: var(--text-muted);
 }
 
 .project-card:hover .card-image i {
@@ -341,7 +402,7 @@ img {
 }
 
 .card-content h3 {
-    color: var(--text-white);
+    color: var(--text-title);
     margin-bottom: 0.5rem;
 }
 
@@ -352,10 +413,11 @@ img {
 }
 
 .tech-badges small {
-    background-color: #111827;
+    background-color: rgba(128, 128, 128, 0.1);
     color: var(--primary-color);
     padding: 2px 8px;
     border-radius: 4px;
+    font-weight: 600;
 }
 
 .card-links {
@@ -368,7 +430,7 @@ img {
     color: var(--primary-color);
 }
 
-/* --- 9. Contact Section --- */
+/* --- 9. Contact/Support Section --- */
 .contact-container {
     text-align: center;
     max-width: 700px;
@@ -377,6 +439,7 @@ img {
 .contact-text {
     margin-bottom: 3rem;
     font-size: 1.1rem;
+    color: var(--text-muted);
 }
 
 .social-links {
@@ -389,33 +452,37 @@ img {
 .social-links a {
     width: 50px;
     height: 50px;
-    background-color: #1f2937;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    color: var(--text-white);
+    color: var(--text-title);
+    transition: var(--transition);
 }
 
 .social-links a:hover {
     background-color: var(--primary-color);
-    color: var(--bg-darker);
+    color: #ffffff;
+    border-color: var(--primary-color);
     transform: scale(1.1);
 }
 
 /* --- 10. Footer --- */
 footer {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-main);
     padding: 2rem;
     text-align: center;
-    border-top: 1px solid #1f2937;
-    color: #6b7280;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
     font-size: 0.875rem;
+    margin-top: auto;
 }
 
 /* --- 11. Responsive Design (Mobile) --- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .nav-links {
         display: none; /* Hide desktop menu links */
     }
