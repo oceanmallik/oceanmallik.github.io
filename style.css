@@ -573,3 +573,60 @@ body.theme-black .edu-card:hover {
     font-size: 0.95rem;
     margin: 0;
 }
+
+/* --- 13. Accordion (Expandable List) --- */
+.accordion-btn {
+    background-color: var(--bg-card);
+    color: var(--text-title);
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: 0.4s;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-btn:hover, .accordion-btn.active {
+    background-color: var(--bg-secondary);
+    border-color: var(--primary-color);
+}
+
+.accordion-btn i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-btn.active i {
+    transform: rotate(180deg); /* Rotates arrow when open */
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: var(--bg-main);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-bottom: 10px;
+    border-radius: 0 0 8px 8px;
+}
+
+.panel-content {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.cert-img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
