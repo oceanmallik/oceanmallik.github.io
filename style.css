@@ -791,9 +791,8 @@ body.theme-black .edu-card:hover {
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
-    
-    /* This forces the image to float in the VERTICAL center */
-    align-items: center; 
+    /* Aligns items to the top initially, so we can push the image down manually */
+    align-items: flex-start; 
 }
 
 .about-text-col {
@@ -807,15 +806,20 @@ body.theme-black .edu-card:hover {
     min-width: 300px;
     max-width: 400px;
     display: flex;
-    
-    /* Ensures the image is centered inside its own box */
-    align-items: center; 
     justify-content: center;
 }
 
-/* On Mobile, add a little space so it doesn't touch the text above it */
+/* DESKTOP ONLY: Push image down to align with the 2nd Card */
+@media (min-width: 992px) {
+    .about-image-col {
+        /* Title + 1st Card height = approx 140px. This aligns it with the 2nd card. */
+        margin-top: 140px; 
+    }
+}
+
+/* MOBILE: Default spacing */
 @media (max-width: 991px) {
     .about-image-col {
-        padding-top: 40px;
+        margin-top: 40px;
     }
 }
