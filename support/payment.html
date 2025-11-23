@@ -13,7 +13,6 @@
         <div class="container nav-container">
             <a href="../index.html" class="logo">Ocean <span class="highlight">Mallik</span></a>
             <div class="nav-right">
-                <!-- Back button goes to Support Page (index.html in this folder) -->
                 <a href="index.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
                     <i class="fas fa-arrow-left"></i> Back
                 </a>
@@ -22,38 +21,42 @@
     </nav>
 
     <section class="section" style="padding-top: 120px; min-height: 100vh; display: flex; align-items: center;">
-        <div class="container" style="max-width: 600px;">
+        <!-- Increased max-width to 900px to allow side-by-side layout -->
+        <div class="container" style="max-width: 900px;">
             <div class="support-column" style="width: 100%; max-width: 100%;">
                 <h1 class="support-title" style="border-color: #E2136E;">Payment Details</h1>
                 
-                <p style="margin-bottom: 20px;">Scan to send support directly.</p>
+                <p style="margin-bottom: 30px;">Scan to send support directly.</p>
 
-                <!-- bKash Box -->
-                <div class="payment-box">
-                    <h3 style="color: #E2136E;"><i class="fas fa-mobile-alt"></i> bKash (Personal)</h3>
+                <!-- Flex Container for Left/Right Layout -->
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; width: 100%;">
                     
-                    <!-- ADDED QR CODE -->
-                    <img src="bkash.jpg" alt="bKash QR Code" class="qr-img">
-                    
-                    <span class="payment-number">01X XXXX XXXX</span>
-                    <small style="color: var(--text-muted);">Please include reference: "Support"</small>
-                </div>
+                    <!-- bKash Box -->
+                    <div class="payment-box" style="flex: 1; min-width: 300px; margin-top: 0;">
+                        <h3 style="color: #E2136E;"><i class="fas fa-mobile-alt"></i> bKash (Personal)</h3>
+                        
+                        <img src="bkash.jpg" alt="bKash QR Code" class="qr-img">
+                        
+                        <span class="payment-number">01326174513</span>
+                        <small style="color: var(--text-muted);">Reference: Short personal info</small>
+                    </div>
 
-                <!-- Rocket Box -->
-                <div class="payment-box">
-                    <h3 style="color: #8C3494;"><i class="fas fa-rocket"></i> Rocket (Personal)</h3>
-                    
-                    <!-- ADDED QR CODE -->
-                    <img src="rocket.jpg" alt="Rocket QR Code" class="qr-img">
-                    
-                    <span class="payment-number">01X XXXX XXXX-X</span>
+                    <!-- Rocket Box -->
+                    <div class="payment-box" style="flex: 1; min-width: 300px; margin-top: 0;">
+                        <h3 style="color: #8C3494;"><i class="fas fa-rocket"></i> Rocket (Personal)</h3>
+                        
+                        <img src="rocket.jpg" alt="Rocket QR Code" class="qr-img">
+                        
+                        <span class="payment-number">01326174513</span>
+                        <small style="color: var(--text-muted);">Reference: Short personal info</small>
+                    </div>
+
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Simple Script for Theme only -->
     <script>
         const body = document.body;
         const themes = ['', 'theme-black', 'theme-white'];
