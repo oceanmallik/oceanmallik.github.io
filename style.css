@@ -12,7 +12,7 @@
     --btn-radius: 5px; 
     --btn-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-    /* === THEME 1: DEFAULT (Ocean Dark) === */
+    /* === THEME 1: DEFAULT (Ocean Dark - Blue/Grey) === */
     --primary-color: #10b981;       
     --primary-hover: #34d399;
     --bg-main: #0f172a;             
@@ -22,54 +22,62 @@
     --text-title: #ffffff;          
     --text-muted: #9ca3af;
     --border-color: #333333; 
+    
+    /* Spacing & Layout */
     --container-width: 1200px;
     --border-radius: 12px;
     --transition: all 0.3s ease;
 }
 
-/* === THEME 2: PITCH BLACK === */
+/* === THEME 2: PITCH BLACK (Deep Dark) === */
 body.theme-black {
     --primary-color: #10b981;
     --primary-hover: #34d399;
+    
     --bg-main: #000000;
     --bg-secondary: #0a0a0a;
     --bg-card: #121212;
     --nav-bg: rgba(0, 0, 0, 0.85);
+    
     --text-main: #e5e5e5;
     --text-title: #ffffff;
     --text-muted: #a3a3a3;
+    
     --border-color: #262626;
 }
 
-/* === THEME 3: CLEAN WHITE === */
+/* === THEME 3: CLEAN WHITE (Bright) === */
 body.theme-white {
     --primary-color: #059669;       
     --primary-hover: #10b981;
+    
     --bg-main: #ffffff;
     --bg-secondary: #f3f4f6;        
     --bg-card: #f9fafb;             
     --nav-bg: rgba(255, 255, 255, 0.9);
+    
     --text-main: #4b5563;           
     --text-title: #111827;          
     --text-muted: #6b7280;
+    
     --border-color: #e5e7eb;
 }
 
-/* === THEME 4: SOFT LIGHT (New!) === */
+/* === THEME 4: SOFT LIGHT (Grey/Muted) === */
 body.theme-soft {
     --primary-color: #059669;
     --primary-hover: #10b981;
     
-    --bg-main: #e3e3e3;             /* Soft Grey */
-    --bg-secondary: #d4d4d4;        /* Slightly Darker */
-    --bg-card: #eeeeee;             /* Card background */
-    --nav-bg: rgba(227, 227, 227, 0.9);
+    --bg-main: #e5e5e5;             
+    --bg-secondary: #d4d4d4;        
+    --bg-card: #f5f5f5;             
+    --nav-bg: rgba(229, 229, 229, 0.9);
     
-    --text-main: #404040;           /* Dark Grey Text */
-    --text-title: #1a1a1a;          /* Almost Black Titles */
+    --text-main: #333333;           
+    --text-title: #111111;          
     --text-muted: #555555;
     
-    --border-color: #cccccc;
+    --border-color: #bbbbbb;
 }
 
 /* --- 2. Global Reset --- */
@@ -257,7 +265,7 @@ img {
 }
 
 .menu-btn {
-    display: none;
+    display: none; /* Hidden on Desktop */
     background: none;
     border: none;
     color: var(--text-title);
@@ -266,6 +274,7 @@ img {
     margin-left: 15px;
 }
 
+/* Mobile Menu */
 .mobile-menu {
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
@@ -332,6 +341,7 @@ img {
     gap: 15px;
 }
 
+/* Hero Image & Animation */
 .hero-image {
     flex: 1;
     display: flex;
