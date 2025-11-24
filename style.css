@@ -372,37 +372,51 @@ img {
     object-fit: cover;
 }
 
-/* --- UPDATED GLOW EFFECT --- */
+/* --- UPDATED GLOW EFFECT (RED HEARTBEAT) --- */
 .blob {
     position: absolute;
-    width: 350px; /* Increased size */
+    width: 350px; 
     height: 350px;
     
-    /* Gradient creates a stronger "core" of light */
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.8) 0%, rgba(16, 185, 129, 0) 70%);
+    /* Red gradient creates the core */
+    background: radial-gradient(circle, rgba(255, 30, 30, 0.8) 0%, rgba(255, 30, 30, 0) 70%);
     
     border-radius: 50%;
-    filter: blur(45px); /* Optimized blur */
+    filter: blur(45px);
     z-index: 1;
     
-    /* Extra light emission */
-    box-shadow: 0 0 60px rgba(16, 185, 129, 0.4);
+    /* Red light emission */
+    box-shadow: 0 0 70px rgba(255, 30, 30, 0.5);
     
-    animation: pulse 2s infinite ease-in-out;
+    /* Faster animation for heartbeat effect */
+    animation: pulse 1.2s infinite ease-out;
 }
 
+/* Heartbeat Animation ("lub-dub") */
 @keyframes pulse {
     0% { 
-        transform: scale(0.9); 
+        transform: scale(0.95); 
         opacity: 0.7; 
     }
-    50% { 
+    10% { /* First beat (lub) */
+        transform: scale(1.05); 
+        opacity: 0.85; 
+    }
+    20% { /* Slight recoil */
+        transform: scale(0.98); 
+        opacity: 0.75; 
+    }
+    30% { /* Second, stronger beat (dub) */
         transform: scale(1.15); 
         opacity: 1; 
-        filter: blur(40px) brightness(1.3); /* Peaks with extra brightness */
+        filter: blur(45px) brightness(1.3);
     }
-    100% { 
-        transform: scale(0.9); 
+    40% { /* Return to base */
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    100% { /* Pause */
+        transform: scale(0.95); 
         opacity: 0.7; 
     }
 }
