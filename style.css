@@ -349,6 +349,7 @@ img {
     position: relative;
     min-width: 300px;
     margin-top: 2rem;
+    align-items: center; /* Added for vertical centering */
 }
 
 .image-frame {
@@ -372,9 +373,14 @@ img {
     object-fit: cover;
 }
 
-/* --- UPDATED GLOW EFFECT (FAST FADE) --- */
+/* --- UPDATED GLOW EFFECT (FAST FADE & CENTERED) --- */
 .blob {
     position: absolute;
+    /* Center the blob relative to .hero-image */
+    top: 50%;
+    left: 50%;
+    /* transform is handled in keyframes */
+
     width: 350px; 
     height: 350px;
     
@@ -388,17 +394,19 @@ img {
     /* Red light emission */
     box-shadow: 0 0 70px rgba(255, 30, 30, 0.5);
     
-    /* Fast Fade In/Out Animation (1s duration) */
-    animation: pulse 1s infinite ease-in-out;
+    /* Slowed down animation from 1s to 3s */
+    animation: pulse 3s infinite ease-in-out;
 }
 
 @keyframes pulse {
     0%, 100% { 
-        transform: scale(0.95); 
+        /* Combine centering translate with scale */
+        transform: translate(-50%, -50%) scale(0.95);
         opacity: 0.3; /* Fades out significantly */
     }
     50% { 
-        transform: scale(1.1); 
+        /* Combine centering translate with scale */
+        transform: translate(-50%, -50%) scale(1.1);
         opacity: 1; /* Fades in fully */
         filter: blur(45px) brightness(1.5); /* Bright glow peak */
     }
