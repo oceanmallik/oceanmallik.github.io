@@ -378,15 +378,15 @@ img {
     height: 320px;
     background-color: rgba(16, 185, 129, 0.2);
     border-radius: 50%;
-    filter: blur(40px);
+    filter: blur(60px); /* Increased blur for more glow */
     z-index: 1;
-    animation: pulse 4s infinite ease-in-out;
+    animation: pulse 2s infinite ease-in-out; /* Faster speed (4s -> 2s) */
 }
 
 @keyframes pulse {
-    0% { transform: scale(0.95); opacity: 0.5; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-    100% { transform: scale(0.95); opacity: 0.5; }
+    0% { transform: scale(0.95); opacity: 0.6; } /* Increased opacity */
+    50% { transform: scale(1.1); opacity: 0.9; } /* Increased scale and opacity */
+    100% { transform: scale(0.95); opacity: 0.6; } /* Increased opacity */
 }
 
 /* --- 6. Sections General --- */
