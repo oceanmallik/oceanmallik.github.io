@@ -9,24 +9,19 @@
     --mac-gold-dark: #d98d1a;
     --mac-dark-grey: #2d2d2d; 
     --text-main: #e2e2e2;
-    --btn-radius: 5px; /* Mac style is less rounded */
+    --btn-radius: 5px; 
     --btn-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
     /* === THEME 1: DEFAULT (Ocean Dark) === */
-    --primary-color: #10b981;       /* Emerald Green (Still used for text highlights) */
+    --primary-color: #10b981;       
     --primary-hover: #34d399;
-    
-    --bg-main: #0f172a;             /* Dark Blue-Grey */
-    --bg-secondary: #020617;        /* Almost Black */
+    --bg-main: #0f172a;             
+    --bg-secondary: #020617;        
     --bg-card: #1e293b;
     --nav-bg: rgba(15, 23, 42, 0.9);
-    
-    --text-title: #ffffff;          /* White */
+    --text-title: #ffffff;          
     --text-muted: #9ca3af;
-    
-    --border-color: #333333; /* Updated to match Mac theme dark grey */
-    
-    /* Spacing & Layout */
+    --border-color: #333333; 
     --container-width: 1200px;
     --border-radius: 12px;
     --transition: all 0.3s ease;
@@ -36,34 +31,45 @@
 body.theme-black {
     --primary-color: #10b981;
     --primary-hover: #34d399;
-    
     --bg-main: #000000;
     --bg-secondary: #0a0a0a;
     --bg-card: #121212;
     --nav-bg: rgba(0, 0, 0, 0.85);
-    
     --text-main: #e5e5e5;
     --text-title: #ffffff;
     --text-muted: #a3a3a3;
-    
     --border-color: #262626;
 }
 
 /* === THEME 3: CLEAN WHITE === */
 body.theme-white {
-    --primary-color: #059669;       /* Darker green for contrast on white */
+    --primary-color: #059669;       
+    --primary-hover: #10b981;
+    --bg-main: #ffffff;
+    --bg-secondary: #f3f4f6;        
+    --bg-card: #f9fafb;             
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --text-main: #4b5563;           
+    --text-title: #111827;          
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+}
+
+/* === THEME 4: SOFT LIGHT (New!) === */
+body.theme-soft {
+    --primary-color: #059669;
     --primary-hover: #10b981;
     
-    --bg-main: #ffffff;
-    --bg-secondary: #f3f4f6;        /* Light Grey */
-    --bg-card: #f9fafb;             /* Very Light Grey */
-    --nav-bg: rgba(255, 255, 255, 0.9);
+    --bg-main: #e3e3e3;             /* Soft Grey */
+    --bg-secondary: #d4d4d4;        /* Slightly Darker */
+    --bg-card: #eeeeee;             /* Card background */
+    --nav-bg: rgba(227, 227, 227, 0.9);
     
-    --text-main: #4b5563;           /* Dark Grey */
-    --text-title: #111827;          /* Black */
-    --text-muted: #6b7280;
+    --text-main: #404040;           /* Dark Grey Text */
+    --text-title: #1a1a1a;          /* Almost Black Titles */
+    --text-muted: #555555;
     
-    --border-color: #e5e7eb;
+    --border-color: #cccccc;
 }
 
 /* --- 2. Global Reset --- */
@@ -120,8 +126,6 @@ img {
 }
 
 /* --- 3. Buttons (MAC THEME) --- */
-
-/* Base Button Class */
 .btn {
     display: inline-block;
     padding: 6px 20px;
@@ -144,7 +148,6 @@ img {
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Primary Button -> Mapped to Mac Blue Style */
 .btn-primary {
     background: linear-gradient(180deg, var(--mac-blue-start) 0%, var(--mac-blue-end) 100%);
     background-color: var(--mac-blue-end);
@@ -159,7 +162,6 @@ img {
     transform: translateY(-1px);
 }
 
-/* Outline Button -> Mapped to Mac Outline Style */
 .btn-outline {
     background: transparent;
     color: var(--text-main);
@@ -173,7 +175,6 @@ img {
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-/* Gold Button (Utility) */
 .btn-gold {
     background: var(--mac-gold);
     border-color: var(--mac-gold-dark);
@@ -187,7 +188,6 @@ img {
     filter: brightness(1.05);
 }
 
-/* Theme Toggle Button */
 .theme-toggle-btn {
     background: transparent;
     border: 1px solid var(--border-color);
@@ -199,7 +199,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px; /* Mac Square radius */
+    border-radius: 5px;
     margin-left: 20px;
     transition: var(--transition);
 }
@@ -257,7 +257,7 @@ img {
 }
 
 .menu-btn {
-    display: none; /* Hidden on Desktop */
+    display: none;
     background: none;
     border: none;
     color: var(--text-title);
@@ -266,7 +266,6 @@ img {
     margin-left: 15px;
 }
 
-/* Mobile Menu */
 .mobile-menu {
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
@@ -333,7 +332,6 @@ img {
     gap: 15px;
 }
 
-/* Hero Image & Animation */
 .hero-image {
     flex: 1;
     display: flex;
@@ -725,7 +723,6 @@ body.theme-black .edu-card:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
-/* Specific Button Colors (Kept Brand Colors but applied Mac Logic) */
 .btn-social {
     background: transparent;
     border: 1px solid var(--primary-color);
@@ -791,7 +788,6 @@ body.theme-black .edu-card:hover {
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
-    /* Aligns items to the top initially */
     align-items: flex-start; 
 }
 
@@ -809,15 +805,12 @@ body.theme-black .edu-card:hover {
     justify-content: center;
 }
 
-/* DESKTOP ONLY: Align with 2nd Card */
 @media (min-width: 992px) {
     .about-image-col {
-        /* Reduced from 140px to 85px to pull it up */
         margin-top: 85px; 
     }
 }
 
-/* MOBILE: Default spacing */
 @media (max-width: 991px) {
     .about-image-col {
         margin-top: 40px;
