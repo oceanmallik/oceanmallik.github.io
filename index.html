@@ -194,21 +194,35 @@
             btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
         }
 
-        // --- Theme Logic ---
+        // --- Theme Logic (UPDATED for 4 Themes) ---
         const themeBtn = document.getElementById('theme-toggle');
         const themeIcon = themeBtn.querySelector('i');
         const body = document.body;
-        const themes = ['', 'theme-black', 'theme-white'];
-        const icons = ['fa-adjust', 'fa-moon', 'fa-sun'];
+
+        // Added 'theme-soft' and 'fa-cloud'
+        const themes = ['', 'theme-black', 'theme-white', 'theme-soft'];
+        const icons = ['fa-adjust', 'fa-moon', 'fa-sun', 'fa-cloud'];
+        
         let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
 
         function applyTheme(index) {
-            body.classList.remove('theme-black', 'theme-white');
+            // Remove all theme classes first
+            body.classList.remove('theme-black', 'theme-white', 'theme-soft');
+            
+            // Add the new class if it's not the default
             if (themes[index]) body.classList.add(themes[index]);
+            
+            // Update Icon
             themeIcon.className = `fas ${icons[index]}`;
+            
+            // Save
             localStorage.setItem('themeIndex', index);
         }
+
+        // Apply on load
         applyTheme(currentThemeIndex);
+
+        // Cycle through themes
         themeBtn.addEventListener('click', () => {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
             applyTheme(currentThemeIndex);
