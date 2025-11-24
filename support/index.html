@@ -92,7 +92,7 @@
 
     <!-- Standard Scripts -->
     <script>
-        // Menu & Theme Logic (Standard)
+        // Menu & Theme Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         if(btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
@@ -100,17 +100,22 @@
         const themeBtn = document.getElementById('theme-toggle');
         const themeIcon = themeBtn.querySelector('i');
         const body = document.body;
-        const themes = ['', 'theme-black', 'theme-white'];
-        const icons = ['fa-adjust', 'fa-moon', 'fa-sun'];
+        
+        // UPDATED for 4 Themes
+        const themes = ['', 'theme-black', 'theme-white', 'theme-soft'];
+        const icons = ['fa-adjust', 'fa-moon', 'fa-sun', 'fa-cloud'];
+        
         let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
 
         function applyTheme(index) {
-            body.classList.remove('theme-black', 'theme-white');
+            body.classList.remove('theme-black', 'theme-white', 'theme-soft');
             if (themes[index]) body.classList.add(themes[index]);
             themeIcon.className = `fas ${icons[index]}`;
             localStorage.setItem('themeIndex', index);
         }
+        
         applyTheme(currentThemeIndex);
+        
         themeBtn.addEventListener('click', () => {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
             applyTheme(currentThemeIndex);
