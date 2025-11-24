@@ -23,16 +23,10 @@
             
             <div class="nav-right">
                 <ul class="nav-links">
-                    <!-- ADDED MISSING LINKS START -->
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../index.html#activities">My Activities</a></li>
-                    <!-- ADDED MISSING LINKS END -->
-                    
-                    <li><a href="#">My Achievements</a></li>
-                    
-                    <!-- UPDATED LINK: Pointing up one level then to support folder -->
+                    <li><a href="#" class="highlight">My Achievements</a></li>
                     <li><a href="../support/">Support Me</a></li>
-                    
                     <li><a href="https://blog.oceanmallik.com/" target="_blank">My Blog</a></li>
                     <li><a href="../about.html">About Me</a></li>
                 </ul>
@@ -51,10 +45,7 @@
             <a href="../index.html">Home</a>
             <a href="../index.html#activities">My Activities</a>
             <a href="#">My Achievements</a>
-            
-            <!-- UPDATED LINK -->
             <a href="../support/">Support Me</a>
-            
             <a href="https://blog.oceanmallik.com/" target="_blank">My Blog</a>
             <a href="../about.html">About Me</a>
         </div>
@@ -67,7 +58,7 @@
             
             <div style="max-width: 800px; margin: 0 auto;">
                 
-                <!-- CERTIFICATE 1 (UPDATED) -->
+                <!-- CERTIFICATE 1 -->
                 <button class="accordion-btn">
                     <span>Foundational C# with Microsoft</span>
                     <i class="fas fa-chevron-down"></i>
@@ -75,40 +66,13 @@
                 <div class="panel">
                     <div class="panel-content">
                         <p>Verified certification from freeCodeCamp and Microsoft. Click the image to verify.</p>
-                        <!-- Wrapped image in Link -->
                         <a href="https://www.freecodecamp.org/certification/oceanmallik/foundational-c-sharp-with-microsoft" target="_blank" title="Click to Verify Certificate">
                             <img src="cert1.jpg" alt="Foundational C# Certificate" class="cert-img" style="cursor: pointer;">
                         </a>
                     </div>
                 </div>
 
-                <!-- CERTIFICATE 2 (COMMENTED OUT) -->
-                <!-- 
-                <button class="accordion-btn">
-                    <span>Hackathon Winner 2024</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content">
-                        <p>First prize winner at the Regional Tech Fest.</p>
-                        <img src="cert2.jpg" alt="Certificate 2" class="cert-img">
-                    </div>
-                </div>
-                -->
-
-                <!-- CERTIFICATE 3 (COMMENTED OUT) -->
-                <!--
-                <button class="accordion-btn">
-                    <span>Python for Data Science</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content">
-                        <p>Specialization in data analysis and visualization.</p>
-                        <img src="cert3.jpg" alt="Certificate 3" class="cert-img">
-                    </div>
-                </div>
-                -->
+                <!-- Future Certificates can be added here -->
 
             </div>
         </div>
@@ -136,27 +100,32 @@
             });
         }
 
-        // --- Standard Menu/Theme Logic ---
+        // --- Mobile Menu Logic ---
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         if(btn && menu) {
             btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
         }
 
+        // --- Theme Logic (UPDATED for 4 Themes) ---
         const themeBtn = document.getElementById('theme-toggle');
         const themeIcon = themeBtn.querySelector('i');
         const body = document.body;
-        const themes = ['', 'theme-black', 'theme-white'];
-        const icons = ['fa-adjust', 'fa-moon', 'fa-sun'];
+
+        const themes = ['', 'theme-black', 'theme-white', 'theme-soft'];
+        const icons = ['fa-adjust', 'fa-moon', 'fa-sun', 'fa-cloud'];
+        
         let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
 
         function applyTheme(index) {
-            body.classList.remove('theme-black', 'theme-white');
+            body.classList.remove('theme-black', 'theme-white', 'theme-soft');
             if (themes[index]) body.classList.add(themes[index]);
             themeIcon.className = `fas ${icons[index]}`;
             localStorage.setItem('themeIndex', index);
         }
+
         applyTheme(currentThemeIndex);
+
         themeBtn.addEventListener('click', () => {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
             applyTheme(currentThemeIndex);
