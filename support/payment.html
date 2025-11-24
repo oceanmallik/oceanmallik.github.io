@@ -57,11 +57,19 @@
         </div>
     </section>
 
+    <!-- Theme Fallback Script (No button on this page) -->
     <script>
         const body = document.body;
-        const themes = ['', 'theme-black', 'theme-white'];
+        const themes = ['', 'theme-black', 'theme-white', 'theme-soft'];
         let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
-        if (themes[currentThemeIndex]) body.classList.add(themes[currentThemeIndex]);
+        
+        // Clear old classes
+        body.classList.remove('theme-black', 'theme-white', 'theme-soft');
+        
+        // Apply current theme if valid
+        if (themes[currentThemeIndex]) {
+            body.classList.add(themes[currentThemeIndex]);
+        }
     </script>
 </body>
 </html>
