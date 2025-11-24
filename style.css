@@ -170,6 +170,22 @@ img {
     transform: translateY(-1px);
 }
 
+/* --- NEW RED BUTTON (Mac Style) --- */
+.btn-red {
+    /* Mac Red Gradient */
+    background: linear-gradient(180deg, #FF6B6B 0%, #FF2D2D 100%);
+    background-color: #FF2D2D;
+    color: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-red:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
 .btn-outline {
     background: transparent;
     color: var(--text-main);
